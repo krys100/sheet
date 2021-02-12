@@ -1,0 +1,86 @@
+[14:23-31.01.2020] - else working along with if
+
+Example:
+  if(outputArr.length >= 3){
+            // has operators (*,/): 
+            let hasOperators = true; 
+            // outputArr.length-2 -> cal-border
+            while(hasOperators){
+                hasOperators = false;
+                for(let num1=0; num1<outputArr.length-2; num1++){
+                    if( Boolean( !isNaN(outputArr[num1]) ) && Boolean( isNaN(outputArr[num1+1]) ) 
+                        && Boolean( !isNaN(outputArr[num1+2]) )){
+
+                        // multiplication 
+                        if(outputArr[num1+1] === '*'){
+                            outputArr.splice(num1,3,outputArr[num1]*outputArr[num1+2]);
+                            // allow while loop to continue 
+                            hasOperators = true;
+                            break;
+                        }
+                        else if(outputArr[num1+1] === '/'){
+                            outputArr.splice(num1,3,(outputArr[num1] /outputArr[num1+2]) );
+                            // allow while loop to continue 
+                            hasOperators = true;
+
+                            // break for loop, so calculation can be executed according
+                            // to the rules of math
+                            // otherwise, divides each section first and then divide section
+                            // by another section, e.g:
+                            //  
+                            //  improper handling:
+                            //  [720,'/',6,'/'5,'/',4,'/',3];
+                            //  [120,'/',1.25,"/",3];
+                            //  [96,'/',3];
+                            //  [32];
+                            //
+                            //  
+                            //  proper handling:
+                            //  [720,'/',6,'/'5,'/',4,'/',3];
+                            //  [120,'/',5,'/'5,'/',3];
+                            //  [24,'/',4,'/',3];
+                            //  [6,'/',3];
+                            //  [2];
+                            //
+                            break;
+                        }
+                    }
+                }
+            }
+    }else{
+        console.log('smaller than 3');
+    }
+
+Efect:
+Even though if statement is executing without any problem, else statement 
+occurs as well
+
+
+
+[12:34-05.02.2021] - numbers being with zero are octals
+Example:
+return eval( inputArr.reduce( (prev,cur) => prev+=cur ) );
+
+Effect: program returns error when value begins with 0, and isn't just 0, e.g:
+002, 03, 03.4, 000001
+
+[15:01-10.02.2021] - cannot do math on id's returning minus values
+example:
+A0 == -3210
+    1. A0/32 == -3210
+    2. (A0)  == 'wrong input'
+
+
+[10:52-11.02.2021] -  panels receive wrong value 
+
+
+[12:11-11.02.2021] - page not responding when auto reload
+Example: 
+ const isCSSStyleSheetConstructorSupported = (() => {
+        try {
+            new CSSStyleSheet();
+            return true;
+        }
+        catch (err) {
+            return false;
+        }

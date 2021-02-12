@@ -1,0 +1,129 @@
+/* 
+[0] App:
+  -> [1] Sheet:
+    -> [2] table:
+      -> [3] topbar
+      -> [3] content:
+        -> [4] content-sidebar
+        -> [4] content-main:
+          -> [5] content-main-row
+*/
+
+* {
+  padding: 0;
+}
+
+/* topbar & side-bar */
+
+.topbar > div,
+.content-sidebar > div {
+  background-color: #666;
+  font-size: 25px;
+  font-weight: 900;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  border: solid #1a1a1a;
+}
+
+/*! topbar & side-bar */
+
+/* topbar */
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  width: 1900px;
+}
+
+.topbar > div {
+  width: 300px;
+  line-height: 2.5em;
+  text-align: center;
+
+  border-width: 5px 2.5px;
+}
+
+.topbar > div:first-child {
+  /* width: 125px; */
+  flex-basis: 9%;
+  background-color: #1a1a1a;
+}
+
+/*! topbar */
+
+/* content */
+
+.content {
+  width: 1900px;
+  background-color: thistle;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*! content */
+
+/* side-bar */
+
+.content-sidebar {
+  flex-basis: 6.3%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: lightgreen; */
+}
+
+.content-sidebar > div {
+  width: 100%;
+  line-height: 2.73em;
+  text-align: center;
+  border-width: 2.5px 5px;
+}
+
+/* content-main */
+.content-main {
+  background-color: lime;
+  flex-basis: 93.2%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+/*! content-main */
+
+.content-main-row {
+  height: 72.5px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.content-main-row:nth-child(odd) {
+  background-color: maroon;
+}
+
+.content-main-row:nth-child(even) {
+  background-color: olive;
+}
+
+.content-main-row > input {
+  /* border: 5px solid lavender; */
+  border-style: solid;
+  border-radius: 0;
+  flex-basis: 20%;
+  border-width: 5px 2.5px;
+
+  text-align: center;
+  /* font-size: 30px; */
+}
+
+.content-main-row > input:last-child {
+  /* border: 5px solid lavender; */
+  border-style: solid;
+  border-radius: 0;
+  flex-basis: 20%;
+  border-width: 5px 5px 5px;
+}

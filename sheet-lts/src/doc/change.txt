@@ -1,0 +1,27 @@
+[02.02.2021-14:26] - open parentheses detectable once 
+Example: 
+  const operations = [
+        'Sum(',
+        'Avg('
+    ];
+
+    for(const e in operations )
+        if(operations[e] === input.slice(0,4) ){
+            outputArr.push(operations[e]);
+            break;
+        }
+    // if no operation been recognized 
+    if(outputArr.length === 0)
+        return new Error(`no such operation`);
+
+
+    // determine if inputArr ends with closed parentheses and this parentheses doesn't
+    // repeat itself
+    const closedParentheses = (inputArr[inputArr.length-1] === ')' 
+    && inputArr[inputArr.length-2] !== ')'  );
+
+Solution:
+Find a way to ensure that open parentheses can occur only once 
++ it will be properly closed (already provided)
+
+[02.02.2021- 15:32] - make mathHandler work with parentheses, floating point numbers etc.
